@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="keywords" content="猜扑克">
+    <meta name="description" content="猜扑克">
+    <title>猜扑克</title>
+    <link rel="stylesheet" href="${image_server_url}images/guessPoker/css/guessPoker.min.css" type="text/css"/>
+    <link rel="stylesheet" href="${image_server_url}images/guessPoker/css/cssreset.min.css" type="text/css">
+    <script src="${image_server_url}images/guessPoker/vendor/jquery-3.1.0.min.js" language="JavaScript"
+            address="guessPoker"></script>
+    <script src="${image_server_url}images/guessPoker/vendor/transit.min.js" language="JavaScript"
+            address="guessPoker"></script>
+    <script src="${image_server_url}images/guessPoker/vendor/felx.js" language="JavaScript"
+            address="guessPoker"></script>
+</head>
+<body>
+<header class="topHeader" id="topHeader">
+    <div id="goldBeans" class="fl"></div>
+    <div id="Beans" class="fl">
+        <div id="BeansNum"></div>
+        <div id="addBeans"></div>
+    </div>
+    <div id="beansFont" class="fl">金豆</div>
+    <ul class="fr  instruction-list">
+        <li class="fl explain" id="guessRule">
+            <div>
+                <span class="top-icon" id="icon-rule"></span>
+                <span class="explain-font">规则</span>
+            </div>
+
+        </li>
+        <li class="fl explain last-icon" id="guessRecord">
+            <div>
+                <span class="top-icon" id="icon-record"></span>
+                <span class="explain-font">记录</span>
+            </div>
+        </li>
+        <li class="fl explain last-icon" id="conversion">
+            <div>
+                <span class="top-icon" id="icon-exchange"></span>
+                <span class="explain-font">兑奖</span>
+            </div>
+
+        </li>
+    </ul>
+</header>
+<div class="guessJack" id="guessJack">
+    <ul id="gameLevel">
+        <li>第十关</li>
+        <li>第九关</li>
+        <li>第八关</li>
+        <li>第七关</li>
+        <li>第六关</li>
+        <li>第五关</li>
+        <li>第四关</li>
+        <li>第三关</li>
+        <li>第二关</li>
+        <li>第一关</li>
+        <li></li>
+    </ul>
+    <div id="bgJack">
+        <img src="${image_server_url}images/guessPoker/img/JackBack.png" alt="">
+    </div>
+    <div id="smallJack">
+        <img src="${image_server_url}images/guessPoker/img/JackBack.png" alt="">
+    </div>
+    <div class="guessWarn common-warn" id="guessWarn-1">
+        请选择投注金豆
+    </div>
+    <div class="guessWarn common-warn" id="guessWarn-2">
+        猜下一张牌的大小红黑
+    </div>
+    <div class="common-warn" id="warnText">
+        猜下一张牌
+    </div>
+    <div class="loseWarn common-warn" id="loseText">
+        猜错了
+    </div>
+    <div class="loseWarn reStartGame" id="reStart-btn"></div>
+    <div id="settlgame" class="stopGame">
+        <div class="con-l" id="congratulate"><img src="${image_server_url}images/guessPoker/img/congratulation.png"></div>
+        <div class="userLevel con-l">成功闯过<span></span>关</div>
+        <div class="putIn putType">
+            <div class="fl putFont">投入金豆:</div>
+            <div class="fl goldBean-icon"></div>
+            <div class="fl goldBean-record" id="putIn-beans"><span></span>金豆</div>
+        </div>
+        <div class="output putType">
+            <div class="fl  putFont">获得金豆:</div>
+            <div class="fl goldBean-icon"></div>
+            <div class="fl goldBean-record" id="output-beans"><span></span>金豆</div>
+        </div>
+        <div class="settlgame-btn">
+            <button id="step-out" class="fl alertWindow-button leftAlert-btn stepOutGame">暂时离开</button>
+            <button class="fr reStartGame alertWindow-button rightAlert-btn">再来一局</button>
+        </div>
+        <div class="share-btn">分享炫耀</div>
+    </div>
+    <div id="backHome" class="stopGame">
+        <div class="con-l" id="backHomeText">离开前请结算</div>
+        <div class="putIn putType">
+            <div class="fl putFont">投入金豆:</div>
+            <div class="fl goldBean-icon"></div>
+            <div class="fl goldBean-record" id="putBeans"><span></span>金豆</div>
+        </div>
+        <div class="output putType">
+            <div class="fl  putFont">获得金豆:</div>
+            <div class="fl goldBean-icon"></div>
+            <div class="fl goldBean-record" id="outBeans"><span></span>金豆</div>
+        </div>
+        <div class="settlgame-btn">
+            <button class="fl alertWindow-button leftAlert-btn" id="quitGame">结算</button>
+            <button class="fr reStartGame alertWindow-button rightAlert-btn" id="returnGame">继续</button>
+        </div>
+        <div class="share-btn">分享炫耀</div>
+    </div>
+    <div id="notStart">
+        <div class="notStartText">你已下单，还未竞猜!</div>
+        <div id="notStartBtn">
+            <button class="notStart-btn stepOutGame leftNoStart-btn fl"></button>
+            <button class="notStart-btn backGame rightNoStar-btn fr"></button>
+        </div>
+    </div>
+    <div id="recharge">
+        <div class="rechargeText" id="rechargeTop">你的金豆余额不足，请获取</div>
+        <div class="rechargeText" id="rechargeBot">
+            <div id="goBackGame" class="fl">暂不需要</div>
+            <div id="forRecharge" class="fl">获取</div>
+        </div>
+    </div>
+
+    <div id="maxGoldBean">
+        <div class="maxGoldBeanText" id="maxGoldBeanTop">您本局参与金豆数量已达上限，请结算</div>
+        <div class="maxGoldBeanText" id="maxGoldBeanClose">立即结算</div>
+    </div>
+</div>
+<div class="guessFooter" id="guessFooter">
+    <div id="wager">
+        <div id="chips" class="fl">
+
+
+        </div>
+        <button id="letGo" class="fr">开始闯关</button>
+    </div>
+    <div id="guessNext">
+        <button id="closeGame" class="fl footerText">结算</button>
+        <div id="guess" class="fl footerText">
+            <button id="toBig">
+                <div class="guessBtn">
+                    <div class="guessText">大</div>
+                    <div class="odds"></div>
+                </div>
+            </button>
+            <button id="toSmall">
+                <div class="guessBtn">
+                    <div class="guessText">小</div>
+                    <div class="odds"></div>
+                </div>
+            </button>
+            <button id="toRed">
+                <div class="guessBtn">
+                    <div class="guessText">红</div>
+                    <div class="odds"></div>
+                </div>
+            </button>
+            <button id="toBlack">
+                <div class="guessBtn fl">
+                    <div class="guessText">黑</div>
+                    <div class="odds"></div>
+                </div>
+            </button>
+        </div>
+        <button id="goNext" class="fr footerText">
+            继续
+        </button>
+    </div>
+</div>
+<div id="shareWindow">
+    <div id="share-list">
+        <div class="shareWindow-top">分享</div>
+        <ul>
+            <li id="shareToWechat">
+                <div class="share-icon">
+                    <img src="${image_server_url}images/guessPoker/img/shareToWechat.png" alt="">
+                </div>
+                <div class="share-font">微信好友</div>
+            </li>
+            <li id="shareToFriends">
+                <div class="share-icon"><img src="${image_server_url}images/guessPoker/img/shareToFriends.png" alt="">
+                </div>
+                <div class="share-font">微信朋友圈</div>
+            </li>
+            <li id="shareToQQFriends">
+                <div class="share-icon"><img src="${image_server_url}images/guessPoker/img/shareToQQFriends.png" alt="">
+                </div>
+                <div class="share-font">QQ好友</div>
+            </li>
+            <li id="shareToQQSpace">
+                <div class="share-icon"><img src="${image_server_url}images/guessPoker/img/shareToQQspace.png" alt="">
+                </div>
+                <div class="share-font">QQ空间</div>
+            </li>
+        </ul>
+    </div>
+    <div class="cancel-share">取消</div>
+</div>
+<div id="ruleWindow">
+    <div class="rule-font rule-title">猜扑克玩法规则</div>
+    <div class="rule-list" id="rule-1">
+        <div class="rule-num fl">1</div>
+        <div class="rule-font fl game-step">
+            玩法:猜下一张翻出什么牌
+        </div>
+    </div>
+    <div class="rule-list" id="rule-2">
+        <div class="rule-num fl">2</div>
+        <div class="rule-font fl game-step">
+            步骤:先投金豆,将发一张牌,猜下一张牌的大小红黑;(对应的奖励倍数在选项下)
+            <br>
+            牌的大小规则如下:
+        </div>
+    </div>
+    <div id="rule-img">
+        <div class="rule-size rule-img"></div>
+        <div class="rule-font">牌的红黑规则如下:</div>
+        <div class="rule-color rule-img"></div>
+    </div>
+    <div class="rule-list" id="rule-3">
+        <div class="rule-num fl">3</div>
+        <div class="rule-font fl game-step">
+            奖励规则:猜中就可以获得对应的金豆数;
+            <br>
+            奖励金豆数 = 起投金豆数*倍数
+        </div>
+    </div>
+    <div class="rule-list" id="rule-4">
+        <div class="rule-num fl">4</div>
+        <div class="rule-font fl game-step">
+            结算:每轮猜中后,可以选择结算或继续,选择结算可以取走已获得的奖励,选择继续则有机会获得更多的奖励;
+        </div>
+    </div>
+</div>
+<div class="blank-close" id="blank-close-rule"></div>
+<div class="blank-close" id="blank-close-record"></div>
+<div id="recordWindow">
+    <div class="recordSeatBack recordSeat">
+        <img src="${image_server_url}images/guessPoker/img/placeholder-img.png" alt="">
+    </div>
+    <div class="recordSeat recordFont recordSeatFont">暂无竞猜记录</div>
+    <ul id="recordList"></ul>
+</div>
+<script type="text/html" id="list">
+    <div class="level-item">
+        <div class="getType item-text fl">{{getType}}</div>
+        <div class="beansNum item-text fl">{{beansNum}}豆</div>
+        <div class="pic fr">
+            <img src="{{src}}">
+        </div>
+    </div>
+</script>
+<script type="text/html" id="betList">
+    <button class="bet fl" val="{{val}}"><img src="{{src}}" alt=""></button>
+</script>
+<script type="text/html" id="forRecordList">
+    <li id="{{id}}" class="record-item">
+        <div class="recordShow">
+            <div class="recordList-top">
+                <div class="recordTime fl recordLeft-text"><span class="date">{{date}}</span>&nbsp;<span class="second">{{second}}</span>
+                </div>
+                <div class="record-content fr recordRight-text">{{recordContent}}</div>
+            </div>
+            <div class="recordList-body">
+                <div class="record-name fl recordLeft-text">{{recordName}}</div>
+                <div class="record-beans fr recordRight-text">
+                    <div class="fl record-icon"></div>
+                    <div class="recordGet fl">{{recordGet}}</div>
+                </div>
+            </div>
+        </div>
+        <ul class="round-content"></ul>
+        <button class="recordList-btn toDown"></button>
+    </li>
+</script>
+<script type="text/html" id="forRoundContent">
+    <li class="round-font">{{content}}</li>
+</script>
+<script src="${image_server_url}images/guessPoker/js/guessPoker.min.js" language="JavaScript" address="guessPoker"></script>
+<script language="JavaScript" address="guessPoker">
+    function initGame(data) {
+        var data = JSON.parse(data);
+        Play.initGame(data);
+    }
+    function postBetNum(data) {
+        var data = JSON.parse(data);
+        Play.postBetNum(data);
+    }
+    function guessNextJack(data) {
+        var data = JSON.parse(data);
+        Play.guessNextJack(data);
+    }
+    function settlgame(data) {
+        var data = JSON.parse(data);
+        Play.settlgame(data);
+    }
+    function getRecordList(data) {
+        var data = JSON.parse(data);
+        Play.getRecordList(data);
+    }
+    function getRoundContent(data) {
+        var data = JSON.parse(data);
+        Play.getRoundContent(data);
+    }
+
+    function quitGame() {
+        Play.quitGame();
+    }
+</script>
+</body>
+</html>

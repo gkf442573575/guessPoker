@@ -1,0 +1,942 @@
+@charset "UTF-8";
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    background-color: #272139;
+    font-family: "PingFang SC", "微软雅黑", "Microsoft Yahei";
+}
+
+body {
+    position: relative;
+}
+
+.over {
+    overflow: hidden;
+}
+
+element {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/*@font-face {*/
+/*font-family: HYZYTJ;*/
+/*src: url("../font/HYZYTJ.ttf");*//*字体**/
+/*}*/
+
+/*********************topHeader*********/
+#topHeader {
+    width: 100%;
+    height: 0.90667rem;
+    background: #161a1c;
+    color: #ffcc00;
+    font-size: 0.32rem;
+}
+
+#topHeader #goldBeans {
+    width: 0.74667rem;
+    height: 0.34667rem;
+    margin-top: 0.28rem;
+    background: url("../img/icon-goldBeans.png") no-repeat center center;
+    background-size: contain;
+}
+
+#topHeader #Beans {
+    width: 1.78667rem;
+    height: 0.53333rem;
+    border: 0.04rem solid #ffcc00;
+    line-height: 0.53333rem;
+    text-indent: 0.13333rem;
+    margin-top: 0.14667rem;
+    border-radius: 0.26667rem;
+    position: relative;
+}
+
+#topHeader #Beans #addBeans {
+    width: 0.34667rem;
+    height: 0.34667rem;
+    position: absolute;
+    right: 0.21333rem;
+    top: 0.09333rem;
+    background: url("../img/icon-btn.png") no-repeat;
+    background-size: contain;
+}
+
+#topHeader #beansFont {
+    width: 1.33333rem;
+    height: 0.90667rem;
+    margin-left: 0.08rem;
+    line-height: 0.90667rem;
+}
+
+#topHeader .instruction-list {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#topHeader .instruction-list .explain {
+    width: 33.3%;
+    height: 50%;
+    box-sizing: border-box;
+    margin-top: 0.22667rem;
+}
+
+#topHeader .instruction-list .explain div {
+    width: 1.33333rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#topHeader .instruction-list .explain span {
+    float: left;
+}
+
+#topHeader .instruction-list .explain .top-icon {
+    width: 0.34667rem;
+    height: 0.34667rem;
+    margin-top: 0.05333rem;
+}
+
+#topHeader .instruction-list .explain .explain-font {
+    text-indent: 0.13333rem;
+    height: 0.45333rem;
+    line-height: 0.45333rem;
+    text-align: center;
+}
+
+/*#topHeader .instruction-list .last-icon {*/
+/*border-left: 0.01333rem solid #727272; }*/
+#topHeader .instruction-list #guessRule #icon-rule {
+    background: url("../img/icon-rule.png") no-repeat;
+    background-size: contain;
+}
+
+#topHeader .instruction-list #guessRecord #icon-record {
+    background: url("../img/icon-record.png") no-repeat;
+    background-size: contain;
+}
+
+#topHeader .instruction-list #icon-exchange {
+    background: url("../img/icon-exchange.png") no-repeat;
+    background-size: contain;
+}
+
+/*********************guessJack*********/
+#guessJack {
+    width: 100%;
+    height: 13.2rem;
+    background: url("../img/guessbackground.jpg") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    perspective: 900px;
+    perspective-origin: 50% 50%;
+}
+
+#guessJack #gameLevel {
+    width: 3.01333rem;
+    overflow: hidden;
+    clear: both;
+    position: absolute;
+    left: 0.02667rem;
+    top: 0.12rem;
+}
+
+#guessJack #gameLevel li {
+    width: 100%;
+    height: 1.06667rem;
+    background: rgba(39, 33, 57, 0.5);
+    border-radius: 0.08rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.06667rem;
+    font-size: 0.37rem;
+}
+
+#guessJack #gameLevel li .level-item .getType {
+    width: 0.34667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    font-size: 0.37rem;
+    color: #ffffff;
+    margin-left: 0.13333rem;
+}
+
+#guessJack #gameLevel li .level-item .beansNum {
+    width: 1.38667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    font-size: 0.37rem;
+    color: #ffffff;
+    text-align: right;
+}
+
+#guessJack #gameLevel li .level-item .pic {
+    width: 0.58667rem;
+    height: 0.85333rem;
+    margin: 0.10667rem 0.13333rem 0 0;
+}
+
+#guessJack #gameLevel li .level-item .pic img {
+    width: 100%;
+}
+
+#guessJack #gameLevel li:first-child {
+    margin-top: 0.7rem;
+}
+
+#guessJack #gameLevel li + li {
+    margin-top: 0.02667rem;
+}
+
+#guessJack #bgJack {
+    width: 2.58667rem;
+    height: 3.81333rem;
+    position: absolute;
+    right: 3.01333rem;
+    bottom: 1.6rem;
+    border: 0.04rem solid rgba(229, 229, 255, 0.5);
+    border-radius: 0.21333rem;
+    transform-origin: 50% 50%;
+    z-index: 5;
+}
+
+#guessJack #bgJack img {
+    transform-origin: 50% 50%;
+    width: 100%;
+}
+
+#guessJack #smallJack {
+    width: 1.97333rem;
+    height: 2.93333rem;
+    position: absolute;
+    right: 0.85333rem;
+    bottom: 1.6rem;
+    display: none;
+    perspective: 900px;
+    perspective-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+#guessJack #smallJack img {
+    transform-origin: 50% 50%;
+    width: 100%;
+}
+
+#guessJack .common-warn {
+    height: 0.48rem;
+    font-size: 0.48rem;
+    color: #07d46b;
+    line-height: 0.48rem;
+    text-align: center;
+    position: absolute;
+}
+
+#guessJack .guessWarn {
+    width: 4.90667rem;
+    display: block;
+}
+
+#guessJack #guessWarn-1 {
+    right: 0.82667rem;
+    bottom: 1.01333rem;
+}
+
+#guessJack #guessWarn-2 {
+    right: 0.82667rem;
+    bottom: 0.26667rem;
+}
+
+#guessJack #warnText {
+    width: 4.77333rem;
+    right: 0.88rem;
+    bottom: 0.74667rem;
+    display: none;
+}
+
+#guessJack .loseWarn {
+    display: none;
+}
+
+#guessJack #loseText {
+    width: 1.68rem;
+    right: 3.78667rem;
+    bottom: 0.66667rem;
+}
+
+#guessJack #reStart-btn {
+    width: 2.64rem;
+    height: 0.88rem;
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.4rem;
+    background: url("../img/icon-restart.png") no-repeat;
+    background-size: contain;
+}
+
+#guessJack #settlgame {
+    display: none;
+}
+
+#guessJack #backHome {
+    display: none;
+}
+
+#guessJack .stopGame {
+    width: 9.38667rem;
+    height: 6.32rem;
+    z-index: 15;
+    position: absolute;
+    top: 3.52rem;
+    left: 50%;
+    margin-left: -4.69333rem;
+    background: url("../img/alert-back.png") no-repeat;
+    background-size: contain;
+}
+
+#guessJack .stopGame #congratulate {
+    width: 100%;
+    height: 0.93333rem;
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+#guessJack .stopGame #congratulate img {
+    height: 100%;
+}
+
+#guessJack .stopGame #backHomeText {
+    width: 100%;
+    height: 1.64rem;
+    text-align: center;
+    font-size: 0.64rem;
+    margin-top: 0.4rem;
+    color: #ffcc00;
+    line-height: 1.64rem;
+}
+
+#guessJack .stopGame .putType {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.34667rem;
+}
+
+#guessJack .stopGame .putType .putFont {
+    width: 1.8rem;
+    height: 0.42667rem;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #ff9c00;
+    line-height: 0.42667rem;
+    margin-left: 2.66667rem;
+}
+
+#guessJack .stopGame .putType .goldBean-icon {
+    width: 0.32rem;
+    height: 0.42667rem;
+    margin-left: 0.24rem;
+    background: url("../img/icon-goldBeans.png") no-repeat center center;
+    background-size: contain;
+}
+
+#guessJack .stopGame .putType .goldBean-record {
+    width: auto;
+    height: 0.42667rem;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #ff9c00;
+    line-height: 0.42667rem;
+    margin-left: 0.24rem;
+}
+
+#guessJack .stopGame .userLevel {
+    width: 100%;
+    height: 0.4rem;
+    margin-top: 0.4rem;
+    font-size: 0.4rem;
+    line-height: 0.4rem;
+    color: #ff9c00;
+    text-align: center;
+}
+
+#guessJack .stopGame .settlgame-btn {
+    width: 100%;
+    overflow: hidden;
+}
+
+#guessJack .stopGame .settlgame-btn .alertWindow-button {
+    width: 2.69333rem;
+    height: 0.85333rem;
+    text-align: center;
+    background: #ffcc00;
+    font-size: 0.4rem;
+    line-height: 0.85333rem;
+    color: #161a1c;
+    border-radius: 0.08rem;
+    margin-top: 0.4rem;
+}
+
+#guessJack .stopGame .settlgame-btn .leftAlert-btn {
+    margin-left: 1.22667rem;
+}
+
+#guessJack .stopGame .settlgame-btn .rightAlert-btn {
+    margin-right: 1.22667rem;
+}
+
+#guessJack .stopGame .share-btn {
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    color: #ff9c00;
+    font-size: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+#guessJack #notStart {
+    display: none;
+    width: 7.92rem;
+    height: 3.78667rem;
+    position: absolute;
+    top: 4.29333rem;
+    left: 50%;
+    z-index: 20;
+    margin-left: -3.96rem;
+    background: url("../img/NoStartGame.png") no-repeat;
+    background-size: contain;
+}
+
+#guessJack #notStart .notStartText {
+    width: 100%;
+    height: 0.48rem;
+    text-align: center;
+    margin-top: 0.85333rem;
+    font-size: 0.48rem;
+    color: #a88cf9;
+}
+
+#guessJack #notStart #notStartBtn {
+    width: 100%;
+    height: 1.2rem;
+    margin-top: 0.74667rem;
+}
+
+#guessJack #notStart #notStartBtn .notStart-btn {
+    width: 2.96rem;
+    height: 100%;
+}
+
+#guessJack #notStart #notStartBtn .leftNoStart-btn {
+    margin-left: 0.26667rem;
+    background: url("../img/NoStartGameStep.png") no-repeat;
+    background-size: contain;
+}
+
+#guessJack #notStart #notStartBtn .rightNoStar-btn {
+    margin-right: 0.26667rem;
+    background: url("../img/NoStartGameGoOn.png") no-repeat;
+    background-size: contain;
+}
+
+#guessJack #recharge, #guessJack #maxGoldBean {
+    width: 7.14667rem;
+    height: 3.45333rem;
+    position: absolute;
+    top: 3.46667rem;
+    left: 50%;
+    margin-left: -3.57333rem;
+    background: #ffffff;
+    border-radius: 0.2rem;
+    display: none;
+}
+
+#guessJack #recharge .rechargeText, #guessJack #maxGoldBean .maxGoldBeanText {
+    font-size: 0.48rem;
+    text-align: center;
+}
+
+#guessJack #recharge #rechargeTop, #guessJack #maxGoldBean #maxGoldBeanTop {
+    width: 100%;
+    height: 2.24rem;
+    border-bottom: 0.01333rem solid #908989;
+    color: #323232;
+}
+
+#guessJack #maxGoldBean #maxGoldBeanTop {
+    line-height: 0.95rem;
+    padding: 0 0.45rem;
+    box-sizing: border-box;
+}
+
+#guessJack #recharge #rechargeTop {
+    line-height: 2.24rem;
+}
+
+#guessJack #recharge #rechargeBot, #guessJack #maxGoldBean #maxGoldBeanClose {
+    width: 100%;
+    height: 1.2rem;
+}
+
+#guessJack #maxGoldBean #maxGoldBeanClose {
+    line-height: 1.2rem;
+    color: #5a97d0;
+}
+
+#guessJack #recharge #rechargeBot div {
+    width: 50%;
+    box-sizing: border-box;
+    line-height: 1.2rem;
+    color: #5a97d0;
+}
+
+#guessJack #recharge #rechargeBot #goBackGame {
+    border-right: 0.01333rem solid #908989;
+}
+
+/*********************guessFooter*********/
+#guessFooter {
+    width: 100%;
+    height: 1.92rem;
+    background: #272139;
+    border-top: 0.05333rem solid #382f52;
+}
+
+#guessFooter #wager {
+    width: 100%;
+    height: 100%;
+}
+
+#guessFooter #wager #chips .bet {
+    transform-origin: 50% 50%;
+    height: 1.12rem;
+    width: 1.112rem;
+    margin-top: 0.4rem;
+    background: #272139;
+    text-align: center;
+}
+
+#guessFooter #wager #chips .bet img {
+    transform-origin: 50% 50%;
+    width: 85%;
+}
+
+#guessFooter #wager #letGo {
+    width: 2.16rem;
+    height: 1.12rem;
+    margin: 0.4rem 0.42667rem 0 0;
+    font-size: 0.4rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.12rem;
+    background: #d91d37;
+    border-radius: 0.08rem;
+}
+
+#guessFooter #guessNext {
+    width: 100%;
+    height: 1.92rem;
+    display: none;
+}
+
+#guessFooter #guessNext .footerText {
+    font-size: 0.4rem;
+    text-align: center;
+    margin-top: 0.4rem;
+    color: #9e85e7;
+}
+
+#guessFooter #guessNext #closeGame {
+    width: 1.45rem;
+    height: 1.12rem;
+    margin-left: 0.32rem;
+    text-align: center;
+    line-height: 1.12rem;
+    background: #342857;
+    border-radius: 0.08rem;
+}
+
+#guessFooter #guessNext #guess {
+    width: 6.05333rem;
+    background: #342857;
+    height: 1.12rem;
+    margin-left: 0.13rem;
+    border-radius: 0.08rem;
+}
+
+#guessFooter #guessNext #guess button {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    height: 1.12rem;
+    background: #342857;
+}
+
+#guessFooter #guessNext #guess button .guessBtn {
+    width: 100%;
+    height: 0.8rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#guessFooter #guessNext #guess button .guessBtn div {
+    width: 100%;
+    height: 50%;
+    font-size: 0.4rem;
+    color: #9e85e7;
+}
+
+#guessFooter #guessNext #guess button:first-child .guessBtn {
+    border-left: none;
+}
+
+#guessFooter #guessNext #goNext {
+    width: 1.45rem;
+    height: 1.12rem;
+    margin-left: 0.13333rem;
+    background: #d91d37;
+    color: #ffffff;
+    border-radius: 0.08rem;
+    float: left;
+}
+
+/*********************shareWindow*********/
+#shareWindow {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#shareWindow #share-list {
+    width: 100%;
+    height: 3.70667rem;
+    background: #f4f4f4;
+}
+
+#shareWindow #share-list .shareWindow-top {
+    width: 100%;
+    height: 0.96rem;
+    text-align: center;
+    line-height: 0.96rem;
+    font-size: 0.37333rem;
+    color: #323232;
+}
+
+#shareWindow #share-list ul {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.24rem;
+}
+
+#shareWindow #share-list ul li {
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+}
+
+#shareWindow #share-list ul li div {
+    width: 100%;
+}
+
+#shareWindow #share-list ul li .share-icon {
+    height: 1.57333rem;
+}
+
+#shareWindow #share-list ul li .share-icon img {
+    height: 100%;
+}
+
+#shareWindow #share-list ul li .share-font {
+    height: 0.32rem;
+    font-size: 0.32rem;
+    line-height: 0.32rem;
+    color: #323232;
+    margin-top: 0.13333rem;
+}
+
+#shareWindow .cancel-share {
+    width: 100%;
+    height: 1.33333rem;
+    text-align: center;
+    line-height: 1.33333rem;
+    background: #ffffff;
+    font-size: 0.45333rem;
+    color: #323232;
+}
+
+/*********************ruleWindow*********/
+#ruleWindow {
+    display: none;
+    width: 100%;
+    height: 13.06667rem;
+    position: absolute;
+    bottom: -13.12rem;
+    left: 0;
+    z-index: 25;
+    border-top: 0.05333rem #d91d37 solid;
+    background: #1f1f1f;
+    overflow-y: scroll;
+}
+
+#ruleWindow .rule-font {
+    font-size: 0.42667rem;
+    color: #b6b6b6;
+}
+
+#ruleWindow .rule-num {
+    width: 0.66667rem;
+    height: 0.66667rem;
+    text-align: center;
+    line-height: 0.66667rem;
+    border-radius: 50%;
+    font-size: 0.45333rem;
+    color: #2e2e2e;
+    background: #b6b6b6;
+    margin-left: 0.40rem;
+}
+
+#ruleWindow .rule-title {
+    width: 100%;
+    height: 0.42667rem;
+    margin-top: 0.53333rem;
+    text-align: center;
+    line-height: 0.42667rem;
+}
+
+#ruleWindow .rule-list {
+    width: 100%;
+    overflow: hidden;
+}
+
+#ruleWindow .game-step {
+    width: 8.45rem;
+    margin-left: 0.13rem;
+    margin-top: 0.12rem;
+}
+
+#ruleWindow #rule-1 {
+    height: 0.66667rem;
+    margin-top: 0.53333rem;
+}
+
+#ruleWindow #rule-2 {
+    margin-top: 0.53333rem;
+}
+
+#ruleWindow #rule-img {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.4rem;
+}
+
+#ruleWindow #rule-img .rule-img {
+    width: 9.12rem;
+    height: 1.30667rem;
+    margin: 0 auto;
+}
+
+#ruleWindow #rule-img .rule-size {
+    background: url("../img/rule-size.png") no-repeat;
+    background-size: contain;
+}
+
+#ruleWindow #rule-img .rule-font {
+    width: 8.45333rem;
+    height: 0.42667rem;
+    margin: 0.4rem 0 0 1.20rem;
+}
+
+#ruleWindow #rule-img .rule-color {
+    margin-top: 0.4rem;
+    background: url("../img/rule-colour.png") no-repeat;
+    background-size: contain;
+}
+
+#ruleWindow #rule-3 {
+    margin-top: 0.53333rem;
+}
+
+#ruleWindow #rule-4 {
+    margin-top: 0.53333rem;
+}
+
+/*********************blank-close*********/
+.blank-close {
+    display: none;
+    width: 100%;
+    height: 2.98667rem;
+    background: rgba(158, 133, 231, 0.2);
+    position: absolute;
+    left: 0;
+    bottom: 13.12rem;
+    z-index: 25;
+}
+
+/*********************recordWindow*********/
+#recordWindow {
+    display: none;
+    width: 100%;
+    height: 13.06667rem;
+    position: absolute;
+    bottom: -13.12rem;
+    left: 0;
+    z-index: 25;
+    border-top: 0.05333rem #d91d37 solid;
+    background: #1f1f1f;
+    overflow-y: auto;
+}
+
+#recordWindow .recordSeat {
+    width: 100%;
+    text-align: center;
+}
+
+#recordWindow .recordSeatBack {
+    height: 3.97333rem;
+    margin-top: 1.25333rem;
+}
+
+#recordWindow .recordSeatBack img {
+    height: 100%;
+}
+
+#recordWindow .recordSeatFont {
+    margin-top: 0.21333rem;
+}
+
+#recordWindow .recordFont {
+    font-size: 0.4rem;
+    color: #b6b6b6;
+}
+
+#recordWindow #recordList {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#recordWindow #recordList li {
+    width: 100%;
+    height: auto;
+    background: #2e2e2e;
+    margin-bottom: 0.26667rem;
+}
+
+#recordWindow #recordList li .recordShow {
+    width: 100%;
+    height: 1.52rem;
+}
+
+#recordWindow #recordList li .recordShow .recordLeft-text {
+    width: 5.44rem;
+    margin-left: 0.42667rem;
+}
+
+#recordWindow #recordList li .recordShow .recordRight-text {
+    width: auto;
+    margin-right: 0.42667rem;
+}
+
+#recordWindow #recordList li .recordShow .recordList-top {
+    width: 100%;
+    height: 0.58667rem;
+    font-size: 0.37333rem;
+}
+
+#recordWindow #recordList li .recordShow .recordList-top .recordTime {
+    color: #666;
+    margin-top: 0.21333rem;
+    height: 0.37333rem;
+}
+
+#recordWindow #recordList li .recordShow .recordList-top .record-content {
+    color: #b6b6b6;
+    height: 0.37333rem;
+    margin-top: 0.21333rem;
+}
+
+#recordWindow #recordList li .recordShow .recordList-body {
+    width: 100%;
+    height: 0.42667rem;
+    margin-top: 0.37333rem;
+    line-height: 0.42667rem;
+}
+
+#recordWindow #recordList li .recordShow .recordList-body .record-name {
+    font-size: 0.37333rem;
+    color: #b6b6b6;
+}
+
+#recordWindow #recordList li .recordShow .recordList-body .record-icon {
+    width: 0.42667rem;
+    height: 0.42667rem;
+    margin-right: 0.08rem;
+}
+
+#recordWindow #recordList li .recordShow .recordList-body .win-icon {
+    background: url("../img/icon-win.png") no-repeat;
+    background-size: contain;
+}
+
+#recordWindow #recordList li .recordShow .recordList-body .recordGet {
+    font-size: 0.37333rem;
+    width: auto;
+    height: 0.42667rem;
+    line-height: 0.42667rem;
+    color: #666666
+}
+
+#recordWindow #recordList li .round-content {
+    width: 100%;
+    height: auto;
+    border-top: 0.01333rem solid #323232;
+    border-bottom: 0.01333rem solid #323232;
+    display: none;
+}
+
+#recordWindow #recordList li .round-content li {
+    width: 100%;
+    height: 0.37333rem;
+    margin-top: 0.26667rem;
+    text-indent: 0.4rem;
+    font-size: 0.37333rem;
+    color: #ffffff;
+    line-height: 0.37333rem;
+}
+
+#recordWindow #recordList li .recordList-btn {
+    width: 0.29333rem;
+    height: 0.18667rem;
+    background: #2e2e2e;
+    margin-left: 50%;
+}
+
+#recordWindow #recordList li .toDown {
+    background: url("../img/icon-toDown.png") no-repeat;
+    background-size: contain;
+}
+
+#recordWindow #recordList li .toUp {
+    background: url("../img/icon-toUp.png") no-repeat;
+    background-size: contain;
+}
+
+/*# sourceMappingURL=guessJack.css.map */
